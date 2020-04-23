@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>EcmaScript 6.0, Operador Spread</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.min.js"></script>
+        <script type="text/babel">
+      /**
+       *  Ele é usado por três pontinhos atecedendo minha array, note no exemplo que dentro da array peças
+        coloquei mais duas outras array com os tres ponstinhos antes, esses três pontinhos vai organizar todos os dados
+        da minha array peças, alinhando como q fosse uma única array, isso é muito útil quando se quer atualizar algo 
+        incluindo uma nova array
+       */
+
+            var caros = ["celta", "fiat", "pálio"];
+            var moto = ["fan",  "honda", "trax"];
+            var peças = ["pneu", ...caros, "corrente", ...moto, "bateria"]
+
+            console.log(peças);
+
+        </script>
+    </head>
+    <body>
+    <h1>Trabalhando com operador spread</h1>
+    <h2>Qual a função do opreador spread?</h2>
+    <h3>
+        Ele é usado por três pontinhos atecedendo minha array, note no exemplo que dentro da array peças
+        coloquei mais duas outras array com os tres ponstinhos antes, esses três pontinhos vai organizar todos os dados
+        da minha array peças, alinhando como q fosse uma única array, isso é muito útil quando se quer atualizar algo 
+        incluindo uma nova array
+    </h3>
+    </body>
+</html>

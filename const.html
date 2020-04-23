@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>EcmaScript 6.0 Const</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.min.js"></script>
+        <script type="text/babel">
+             
+             //se usa const com letra maiuscula, não se pode usar const duas vezes no mesmo escopo
+             //se tiver 2 conts em escopos diferentes pode sim ter, mas não no memso bloco
+             //posso outra variável se for de outro tipo com var
+             //temos duas conts iguais porém o console só repesitou a const local e não usou a global
+
+             const JUNIOR = 1991;
+             console.log(JUNIOR);
+
+             function calcularIdade (anoAtual){
+                const JUNIOR = 1995
+                return anoAtual - JUNIOR;
+             }
+              console.log(calcularIdade(2020));
+            
+
+        </script>
+    </head>
+    <body>
+    
+    </body>
+</html>

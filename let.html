@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>EcmaScript 6.0 USANDO VAR, LET E CONST</title>
+
+        <style>
+            section div {
+                height: 100px;
+                width: 100px;
+                background-color: blue;
+                border-radius: 50%;
+                float: left;
+                margin: 5px;
+                cursor: pointer;
+            }
+        </style>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.min.js"></script>
+        <script type="text/babel">
+
+            for( let i = 0 ; i < 34 ; i++ ) {
+            var div = document.createElement('div');
+            div.onclick = function(){
+                alert("você clikou no elemento número " + i);
+            }
+            document.getElementsByTagName('section')[0].appendChild(div);
+            }
+
+            //let foi usado dentro do escopo de for, o let alinhou todos os elementos de 0  á 45
+            //se vc olhar no browser verá q a cadaa ve q clicka será informador a numeração correta
+            //se vc trocar por let por var não ficará dinâmico assim
+        </script>
+    </head>
+    <body>
+    <section></section>
+    </body>
+</html>
