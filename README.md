@@ -1,2 +1,2 @@
-# Emascript6
-Fundamentos  sobre o  emascript6
+# ECMAScript6
+Fundamentos  sobre o  ECMAScript6
