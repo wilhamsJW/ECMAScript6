@@ -7,18 +7,23 @@
         //diferença entre var e let, 
         //var pode ser acessada mesmo nâo sendo global e estando dentro
         //de um bloco de estrutura de repetição, o q sâo blocos? sâo isso -> ({}), 
-        //let não pode ser acessada estando dentro de um bloco se for global sim 
-
+        //let só pode ser acessada estando dentro de um bloco, se vc chamar ela de fora do bloco ou globalmente irá 
+        //retronar erro do console
+        //se uma let estiver global eu não consigo acessa-la dentro de um bloco
         //ex.:
 
          var loto = 40;
+         //var global
 
             if(loto){
-                let loto = 10;
-                console.log("escopo local " + loto);
+                let lotoO = 10;//var local
+                console.log("escopo local " + lotoO);
             }
 
          console.log("escopo global " + loto);
+         //se coloco a var do bloco if aqui nesse console do lado de fora, eu não tenho acesso á ela, me retornará erro
+         //pq ela é uma let, let não podem ser acessadas globalmente se estiverem em um bloco
+         //faça o teste: mude a var de if de let pra var e conseguirá acessa-la
             
 
         </script>

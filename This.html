@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <title>EcmaScript 6.0 -  THIS</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.min.js"></script>
+        <script type="text/babel">
+
+            /*
+            var jogador = {
+                nome:"Messi",
+                habilidades:["chutar", "driblar", "correr", "fazer gols"],
+                 escreverHabilidades: function () {
+                     console.log(this.nome);
+                 }
+            }
+              jogador.escreverHabilidades();
+            */  
+
+              //se coloco apenas nome dentro do console, não me rertonará nada, pois não há nada
+              //dentro do bloco da função escreverhabilidades, para refrenciar a var jogador e pegar
+              //o método nome, preciso usar o this, this q siginifica este, qndo uso o this me 
+              //referencio a var jogador e estou pegando o nome do jogador
+
+              //Agora vamos concatenas a propriedade nome com a propriedade habilidades usando o THIS 
+              
+
+            /*
+            var jogador = {
+                nome:"Messi",
+                habilidades:["chutar", "driblar", "correr", "fazer gols"],
+                 escreverHabilidades: function () {
+                    this.habilidades.forEach(function(skill){
+                        console.log(this.nome + " é craque em " + skill);
+                    });
+                 }
+            }
+              jogador.escreverHabilidades();
+            */  
+
+              /**
+              desse jeito acima me retornará este erro: embedded:30 Uncaught TypeError: Cannot read property 'nome' 
+              of undefined
+              dizendo q nome está indefinido, pq? pq estou tentando acessar nome dentro de habilidades, e não existe
+              nome dentro de habilidades, a partir do momento q coloquei this.habilidades a função só irá reconhecer
+              o q tiver dentro de habilidades. 
+
+              O que fazer?
+
+              Crie um var  chamada _this e diga q ela é igual a this, dessa forma: var _this = this;
+              quando faço isso estou transferindo a propiedades do elemento nome para o _this, então o _this
+              é o this fora do loop forEach, dessa forma a função não irá ter conflito com os this, pois o _this
+              será outro this diferente do this.habilidades
+
+              LEMBRETES:
+              skill pode ser qq nome, o que representa este parâmetro é a var habilidades usada com o this
+              foreach é usado pra percorrer todos os elemnentos
+              esse _this é só pra diferenciar de do this já usado pra habilidades, poderia ser qq letra no lugar do 
+              underline
+              */
+
+              //o código ficará assim
+
+              var jogador = {
+                nome:"Messi",
+                habilidades:["chutar", "driblar", "correr", "fazer gols"],
+                //habilidades: ["chutar, driblar, correr"],
+                escreverHabilidades: function () {
+
+                    var _this = this;
+
+                    this.habilidades.forEach(function(skill){
+                        console.log(_this.nome + " é craque em " + skill );
+                    });
+                 }
+            }
+              jogador.escreverHabilidades();
+
+
+
+
+        </script>
+    </head>
+    <body>
+        <H1>TRABALHANDO COM O THIS</H1>
+        <H2></H2>
+    
+    </body>
+</html>
