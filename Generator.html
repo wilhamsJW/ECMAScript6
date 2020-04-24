@@ -1,0 +1,122 @@
+<html>
+    <head>
+        <title>EcmaScript 6.0 GENERATOR</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser-polyfill.js"></script>
+        <noscript>AVISO: Foi incluído mais uma biblioteca javascript pra podermos usar o generator, é este último
+        link com polyfill no final</noscript>
+        <script type="text/babel">
+
+
+            //exemplo de um generator do tipo iterator protocol
+            
+            /*
+            function* gen() {
+                yield "uva";
+                yield 2;
+                yield 3;
+            }
+
+            var g = gen();
+
+            console.log(g.next());
+            console.log(g.next());
+            console.log(g.next());
+            console.log(g.next());
+            */
+
+            //o objeto é interator quando implementa o método next
+            //note que no console ele irá retonar todos os objetos como falso e o ultimo como verdaeiro
+            //é verdadeiro ou true pq terminou, não existe o último objeto
+
+             //exemplo de um generator do tipo iterable protocol
+
+            /*
+             function* idCriador() {
+                 var i=0;
+                 while(true) {
+                     yield i++;
+                 }
+             }
+                var g = idCriador();
+
+                console.log(g.next().value);
+                console.log(g.next().value);
+                console.log(g.next().value);
+                console.log(g.next().value);
+                console.log(g.next().value);
+             */
+
+
+             //exemplo 02 generator Criando um função para aprecer os elementos de um em um segundo até finalizar
+             //usamos um for e o generator
+             //setInterval cria uma função e mostra a periodicidade que vc quer que seja usada essa função
+             //aí fizemos com 1000 miliSegundos q siginifa 1 segundo
+             //JavaScript: Propriedade Length. Descrição: Retorna a quantidade de caracteres em uma string.
+
+             function* baterNoLiquidificador (ing) {
+                 for (var i=0; i<ing.length; i++) {
+                    yield ing[i];
+                 }
+             }
+             var ingredientes = baterNoLiquidificador(["Leite", "Nescau", "Banana", "Aveia"]);
+
+             var fazerVitamina = setInterval( function(){
+
+                 var vitamina = ingredientes.next();
+                 if(vitamina.done) {
+                     clearInterval(fazerVitamina);
+                     alert("Acabou, Vitamina Pronta");
+              } else {
+                  alert(vitamina.value);
+              }
+             }, 1000 )
+
+             //setInterval(function(){ alert("Hello"); }, 3000);
+             //exemplo de setinterval
+/*
+             Exemplo
+Alterne entre duas cores de plano de fundo uma vez a cada 300 milissegundos:
+
+var myVar = setInterval(setColor, 300);
+
+function setColor() {
+  var x = document.body;
+  x.style.backgroundColor = x.style.backgroundColor == "yellow" ? "pink" : "yellow";
+}
+
+function stopColor() {
+  clearInterval(myVar);
+}
+*/
+
+
+  </script>
+    </head>
+    <body>
+      <H1>GENERATOR</H1>
+      <h2>O objeto Generator é retornado por generator function e conforme iterable protocol e o iterator protocol.</h2>
+      <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Generator"><h4>
+          acesse o site para mais especificações</h4></a>
+
+        <ul>
+            <li>
+                <h2>Generator.prototype.next()
+                Retorna o valor fornecido pela expressão yield.</h2>
+            </li>
+
+             <li>
+                <h2>  Generator.prototype.return()
+                Retorna o valor fornecido a finaliza o generator.</h2>
+              </li> 
+
+             <li>
+                <h2> Generator.prototype.throw()
+                Lança um erro no generator.</h2>
+            </li>       
+        </ul>
+
+      
+
+   </body>
+</html>
