@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <title>EcmaScript 6.0 Extrair valores Destructuring Assingnemt</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.min.js"></script>
+        <script type="text/babel">
+
+          /*
+            var salada = ["uva", "maça", "pera","banana"]
+            console.log(salada[0]); //uva
+            console.log(salada[3]); //pera
+          */
+
+          //Agora com Destructuring Assingment
+         /*       
+          var [primeiro, segundo] =  ["uva", "maça", "pera","banana"]
+          console.log(primeiro);
+          console.log(segundo);
+         */   
+
+          //se vc quiser pegar o quarto elemento, não basta colocar quarto, o computador não entende
+          //se colocar quarto ele vai me trazer o elemento que se segue, resolvemos isso com
+          //um vírgula á mais pra ficar um vazio
+          //Dessa forma:
+
+         /*   
+          var [primeiro, segundo, , quarto] =  ["uva", "maça", "pera","banana"]
+          console.log(primeiro);
+          console.log(segundo);
+          console.log(quarto);
+         */   
+
+         /**Também podemos usar o oprador spread aqui dentro,(Veja o arquivo spread desta pasta)
+          aprensentando os outros elementos
+         em uma array separada, colocando o resto dos elementos dentro de uma nova array
+         Dessa forma:
+         */
+
+         var [primeiro, segundo, ...resto] =  ["uva", "maça", "pera","banana", "limão"]
+          console.log(primeiro);
+          console.log(segundo);
+          console.log(resto);
+
+
+
+
+        </script>
+    </head>
+    <body>
+        <h1> Extrair valores de uma Array usando Destructuring Assingnemt</h1>
+        <h2>A sintaxe de atribuição via desestruturação (destructuring assignment) é uma 
+            expressão JavaScript que possibilita extrair dados de arrays ou objetos em variáveis
+            distintas.</h2>
+    </body>
+</html>

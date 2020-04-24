@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>EcmaScript 6.0 -  THIS</title>
+        <title>EcmaScript 6.0 -  This & Bind</title>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.min.js"></script>
         <script type="text/babel">
 
@@ -20,7 +20,7 @@
               //o método nome, preciso usar o this, this q siginifica este, qndo uso o this me 
               //referencio a var jogador e estou pegando o nome do jogador
 
-              //Agora vamos concatenas a propriedade nome com a propriedade habilidades usando o THIS 
+              //Agora vamos concatenar a propriedade nome com a propriedade habilidades usando o THIS 
               
 
             /*
@@ -59,6 +59,7 @@
 
               //o código ficará assim
 
+              /*
               var jogador = {
                 nome:"Messi",
                 habilidades:["chutar", "driblar", "correr", "fazer gols"],
@@ -73,15 +74,67 @@
                  }
             }
               jogador.escreverHabilidades();
+            */  
 
 
+      //Agora Vamos trabalhar com o método chamado bind 
+
+      //O bind irá eliminar a var _this = this;
+      //entre as chaves q fecha a função this.habilidades e o parenteses q fecha o if coloque .bind(this)
+      //dessa forma o this vai ser passado através do bind, eliminando a var _this = this;
+      //entâo o Bind nesse exemplo me ajudou a referenciar uma propriedade da var jogador sem ter conflito
+      //com o this.habilidades, conseguir assim mostrar 2 propriedades em uma única função usando bind
+      //Para mais informações sobre bind acesse o mozila
+
+      /*      
+      var jogador = {
+                nome:"Neymar",
+                habilidades:["chutar", "driblar", "correr", "fazer gols"],
+                //habilidades: ["chutar, driblar, correr"],
+                escreverHabilidades: function () {
+
+                    //var _this = this;
+                    //linha eliminada pelo bind
+                    this.habilidades.forEach(function(skill){
+                        console.log(this.nome + " é craque em " + skill );
+                    }.bind(this))
+                 }
+            }
+              jogador.escreverHabilidades();
+          */    
+
+
+     //Agora vamos refazer ese código acima com arrow function:
+     /**
+     1° Passo: Elimine o : function    de escrever habilidades
+     2° Passo: Elimine o parenteses q abre a função
+     3º Passo: Mantenha o parãmetro skill, os parenteses de skil será o corpo da função, co console tem q estar dentro
+     dele
+     4° Passo: Coloque a arrow function representada por => após skill
+     5º Passo: Se a função tiver apenas uma instrução vc pode eliminar as chaves, se tiver duas vc terá q manter
+     (nosso caso só tem uma)
+     6º Passo: Retire o .bind(this)
+     */
+     
+     var jogador = {
+                nome:"Ronaldo Fenõmeno",
+                habilidades:["chutar", "driblar", "correr", "fazer gols"],
+                escreverHabilidades() {
+
+                    this.habilidades.forEach(skill => 
+                        console.log(this.nome + " é craque em " + skill )
+                    )
+                 }
+            }
+              jogador.escreverHabilidades();
 
 
         </script>
-    </head>
+  </head>
     <body>
-        <H1>TRABALHANDO COM O THIS</H1>
-        <H2></H2>
-    
+       <div>
+          <H1>TRABALHANDO COM O THIS & bIND</H1>
+          <H2>O método bind() cria uma nova função que, quando chamada, tem sua palavra-chave this definida com o valor fornecido, com uma sequência determinada de argumentos precedendo quaisquer outros que sejam fornecidos quando a nova função é chamada.</H2>
+      </div>
     </body>
 </html>
