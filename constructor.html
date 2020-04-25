@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>EcmaScript 6.0 Método Constructor e classes</title>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.min.js"></script>
+          <script type="text/babel">
+
+            class Produto {
+
+
+                constructor (nome, preco){
+                this.nome = nome;
+                this.preco = preco;
+                
+                }
+
+                escreverDados() {
+                    console.log(`Minha  ${this.nome} custa ${this.preco} reais`)
+                    //console.log("Minha " + this.nome + " custa "  + this.preco + " Reais");
+                }
+                 //método escrever dados tem a ação de mostrar algo ao usuário
+            }
+
+            var caneta = new Produto("caneta bic", 3);
+            //implemente valores no método contructor com uma var global
+            caneta.escreverDados();
+
+       </script>
+     </head>
+    <body>
+      <h1>Método constructor</h1>
+   </body>
+</html>

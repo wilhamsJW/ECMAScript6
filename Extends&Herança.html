@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>EcmaScript 6.0 Uso de Herança com extends</title>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.min.js"></script>
+          <script type="text/babel">
+
+       class Poligono {
+           constructor (lados, altura, largura, nome) {
+               this.lados = lados;
+               this.altura = altura;
+               this.largura = largura;
+               this.nome = nome;
+       
+           }
+
+           escreverCaracteristicas() {
+               console.log(`Eu sou um ${this.nome} tenho ${this.lados} lados , tenho uma altura de ${this.altura} e uma largura de ${this.largura} `)
+           }
+       }
+       
+         //Criando uma classe que extende de poligono usando o -> extends, será uma classe filho
+
+         class Quadrado extends Poligono  {
+             constructor (altura, largura) {
+                super(4, altura, largura, 'quadrado');
+                //super está chamando a classe pai, que é o Poligono
+             }
+         }
+
+         var pentagono = new Poligono(5, 6, 7, "pentagono");
+         pentagono.escreverCaracteristicas();
+
+         var quadrado = new Quadrado(10,10);
+         quadrado.escreverCaracteristicas();
+         //note q a class filho usado com extends obteve a mesma chamada do console de poligono, usando
+         //o método escreverCaracteristicas
+         //isso q chamamos de herança, qunado uma classe usa caracterisicas de outra class
+
+
+       </script>
+     </head>
+    <body>
+      <h1>Uso de Herança com extends</h1>
+   </body>
+</html>
